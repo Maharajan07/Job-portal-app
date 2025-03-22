@@ -1,0 +1,119 @@
+.custom-navbar {
+    width: 890px;
+    height: 80px;
+    background: #ffffff;
+    position: relative; /* Ensures it stays on top */
+    top: 21px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 122px;
+    border: 1px solid #fcfcfc;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    z-index: 1000; /* Keeps it above other elements */
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo {
+    height: 50px;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-nav .nav-link {
+    color: #000;
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 10px;
+    transition: all 0.1s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+    background: rgba(255, 255, 255, 0.05); /* Light background on hover */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    color: black;
+    transform: translateY(3px);
+    transform: translateX(2px);
+}
+
+.create-job-btn {
+    background: linear-gradient(135deg, #8a2be2, #6a0dad);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    height: 40px;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: top 0.3s ease-in-out;
+}
+
+/* .create-job-btn:hover {
+    background: linear-gradient(135deg, #6a0dad, #8a2be2);
+} */
+
+
+.create-job-btn::before {
+    content: "Login"; /* Text to show on hover */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: top 0.3s ease-in-out;
+    color: white;
+}
+
+.create-job-btn:hover::before {
+    top: 0; /* Moves text up */
+}
+
+.create-job-btn span {
+    position: absolute;
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+.create-job-btn:hover span {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+.create-job-btn .login-text {
+    transform: translateY(100%);
+    opacity: 0;
+}
+.create-job-btn:hover .create-text {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+.create-job-btn:hover .login-text {
+    transform: translateY(0);
+    /* opacity: 1; */
+}
