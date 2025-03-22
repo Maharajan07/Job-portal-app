@@ -5,6 +5,9 @@ import JobFormModal from "./components/JobFormModal";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/Navbar.css";
 
+// ✅ Use environment variable for API URL
+const API_URL = import.meta.env.VITE_API_URL;
+
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [jobs, setJobs] = useState([]);
@@ -17,7 +20,7 @@ function App() {
   // ✅ Function to fetch jobs from the backend
   const fetchJobs = async () => {
     try {
-      const response = await fetch("http://localhost:5000/jobs");
+      const response = await fetch(`${API_URL}/jobs`);
       const data = await response.json();
       setJobs(data);
     } catch (error) {
