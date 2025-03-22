@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import JobList from "./components/JobList";
 import JobFormModal from "./components/JobFormModal";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./styles/Navbar.css";
+import "../styles/Navbar.css";
 
 // ✅ Use environment variable for API URL
 const API_URL = import.meta.env.VITE_API_URL;
