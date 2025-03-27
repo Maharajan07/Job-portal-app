@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "../styles/JobFormModal.css";
-import "../styles/Dropdown.css"; // Import dropdown styles
-
+import "../styles/Dropdown.css"; 
 const JobFormModal = ({ isOpen, onClose, onJobSubmit }) => {
   if (!isOpen) return null;
 
@@ -20,7 +19,6 @@ const JobFormModal = ({ isOpen, onClose, onJobSubmit }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // ✅ Handle form submission (Send data to MongoDB)
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -35,7 +33,7 @@ const JobFormModal = ({ isOpen, onClose, onJobSubmit }) => {
         description: formData.description,
       };
 
-      console.log("🔍 Sending Job Data:", jobData); // ✅ Debug frontend data
+      console.log("🔍 Sending Job Data:", jobData); 
 
       const response = await fetch("http://localhost:5000/jobs", {
         method: "POST",
@@ -48,10 +46,10 @@ const JobFormModal = ({ isOpen, onClose, onJobSubmit }) => {
         console.log("✅ Job added successfully:", result.job);
 
         if (typeof onJobSubmit === "function") {
-          onJobSubmit(result.job); // ✅ Add the job to the job list instantly
+          onJobSubmit(result.job);
         }
 
-        setFormData({ // ✅ Reset form after submission
+        setFormData({ 
           jobTitle: "",
           companyName: "",
           location: "",
@@ -61,7 +59,7 @@ const JobFormModal = ({ isOpen, onClose, onJobSubmit }) => {
           deadline: "",
           description: "",
         });
-        onClose(); // ✅ Close modal after submission
+        onClose(); 
       } else {
         console.error("❌ Failed to submit job");
       }
@@ -71,7 +69,7 @@ const JobFormModal = ({ isOpen, onClose, onJobSubmit }) => {
   };
 
   return (
-    <div className="modal-overlay" onClick={onClose}>
+    <div className="modal-overlay" onClick={onClose} style={{ overflowY: "auto",display: "flex", alignItems: "center" }}>
       <div className="modal-container" onClick={(e) => e.stopPropagation()}>
         <div className="modal-content">
           <h2 className="modal-title">Create Job Opening</h2>
@@ -104,7 +102,7 @@ const JobFormModal = ({ isOpen, onClose, onJobSubmit }) => {
             </div>
 
             <div className="form-row">
-              {/* ✅ Dropdown for Location */}
+
               <div className="form-group dropdown">
                 <label>Location</label>
                 <button type="button" className="dropbtn">
@@ -117,7 +115,7 @@ const JobFormModal = ({ isOpen, onClose, onJobSubmit }) => {
                 </div>
               </div>
 
-              {/* ✅ Dropdown for Job Type */}
+
               <div className="form-group dropdown">
                 <label>Job Type</label>
                 <button type="button" className="dropbtn">
@@ -132,7 +130,7 @@ const JobFormModal = ({ isOpen, onClose, onJobSubmit }) => {
             </div>
 
             <div className="form-row">
-              {/* ✅ Salary Range */}
+
               <div className="form-group">
                 <label>Salary Range</label>
                 <div className="salary-inputs">
@@ -159,7 +157,7 @@ const JobFormModal = ({ isOpen, onClose, onJobSubmit }) => {
                 </div>
               </div>
 
-              {/* ✅ Application Deadline */}
+
               <div className="form-group">
                 <label>Application Deadline</label>
                 <div className="date-wrapper">
@@ -174,7 +172,7 @@ const JobFormModal = ({ isOpen, onClose, onJobSubmit }) => {
               </div>
             </div>
 
-            {/* ✅ Job Description */}
+
             <div className="form-group">
               <label>Job Description</label>
               <textarea
@@ -187,7 +185,7 @@ const JobFormModal = ({ isOpen, onClose, onJobSubmit }) => {
               />
             </div>
 
-            {/* ✅ Submit and Close Buttons */}
+
             <div className="modal-footer">
               <button type="button" className="save-btn">Save Draft</button>
               <button type="submit" className="publish-btn">Publish »</button>

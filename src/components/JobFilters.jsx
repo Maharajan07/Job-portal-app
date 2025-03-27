@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import searchIcon from "../assets/search.png";
 import typeIcon from "../assets/type.png";
 import locationIcon from "../assets/location.png";
+import ReactSlider from "react-slider";
+
 
 const JobFilters = ({ onFilterChange }) => {
   const [search, setSearch] = useState("");
@@ -10,61 +12,74 @@ const JobFilters = ({ onFilterChange }) => {
   const [salary, setSalary] = useState([50000, 80000]);
 
   useEffect(() => {
-    onFilterChange({
-      search,
-      location,
-      jobType,
-      salary,
-    });
-  }, [search, location, jobType, salary, onFilterChange]);
+    onFilterChange({ search, location, jobType, salary });
+  }, [search, location, jobType, salary]); 
 
   return (
     <div className="job-filters">
-      <div className="filter-item">
-      <img src={searchIcon} alt="Search Icon" className="filter-icon" />
 
-        <input type="text" placeholder="Search By Job Title,"></input>
+      <div className="filter-item">
+        <img src={searchIcon} alt="Search Icon" className="filter-icon" />
+        <input
+          type="text"
+          placeholder="Search by Job Title"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
       </div>
 
       <div className="filter-separator"></div>
 
       <div className="filter-item">
-      <img src={typeIcon} alt="Type Icon" className="filter-icon" />
-
+        <img src={locationIcon} alt="Location Icon" className="filter-icon" />
         <select value={location} onChange={(e) => setLocation(e.target.value)}>
           <option value="">Preferred Location</option>
           <option value="Remote">Remote</option>
           <option value="Onsite">Onsite</option>
+          <option value="Hybrid">Hybrid</option>
+          <option value="WFH">WFH</option>
+          <option value="WFO">WFO</option>
         </select>
       </div>
 
       <div className="filter-separator"></div>
 
       <div className="filter-item">
-      <img src={locationIcon} alt="Location Icon" className="filter-icon" />
-
+        <img src={typeIcon} alt="Type Icon" className="filter-icon" />
         <select value={jobType} onChange={(e) => setJobType(e.target.value)}>
           <option value="">Job Type</option>
-          <option value="Full Time">Full Time</option>
-          <option value="Part Time">Part Time</option>
+          <option value="FullTime">Full Time</option>
+          <option value="PartTime">Part Time</option>
           <option value="Freelance">Freelance</option>
+          <option value="Internship">Internship</option>
+          <option value="Contract">Contract</option>
+
         </select>
       </div>
 
       <div className="filter-separator"></div>
 
       <div className="salary-range">
-        <span>Salary Per Month</span>
-        <input
-          type="range"
-          min="30000"
-          max="150000"
-          step="5000"
-          value={salary[0]}
-          onChange={(e) => setSalary([Number(e.target.value), salary[1]])}
+        <div className="salary-headres">
+          <span>Salary Per Month </span>
+          <span>₹{salary[0] / 1000}k - ₹{salary[1] / 1000}k</span>
+        </div>
+        <ReactSlider
+          className="salary-slider"
+          thumbClassName="thumb"
+          trackClassName="track"
+          min={10000}
+          max={450000}
+          step={5000}
+          value={salary}
+          onChange={setSalary}
+          pearling
+          minDistance={5000} 
         />
-        <span>₹{salary[0] / 1000}k - ₹{salary[1] / 1000}k</span>
-      </div>
+      <div className="salary-values">
+    
+  </div>
+</div>
     </div>
   );
 };

@@ -1,8 +1,18 @@
+@font-face {
+    font-family: 'Satoshi';
+    src: url('../fonts/Satoshi-Variable.woff2') format('woff2'),
+         url('../fonts/Satoshi-Variable.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
 .custom-navbar {
+    font-family: 'Satoshi', sans-serif;
+    font-weight: bold;
     width: 890px;
     height: 80px;
     background: #ffffff;
-    position: relative; /* Ensures it stays on top */
+    position: relative; 
     top: 21px;
     left: 50%;
     transform: translateX(-50%);
@@ -12,8 +22,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 25px;
     padding: 0 30px;
-    z-index: 1000; /* Keeps it above other elements */
+    z-index: 1000;
 }
 
 .navbar-brand {
@@ -45,8 +56,8 @@
 }
 
 .navbar-nav .nav-link:hover {
-    background: rgba(255, 255, 255, 0.05); /* Light background on hover */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background: rgba(255, 255, 255, 0.05); 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
     color: black;
     transform: translateY(3px);
     transform: translateX(2px);
@@ -71,13 +82,10 @@
     transition: top 0.3s ease-in-out;
 }
 
-/* .create-job-btn:hover {
-    background: linear-gradient(135deg, #6a0dad, #8a2be2);
-} */
 
 
 .create-job-btn::before {
-    content: "Login"; /* Text to show on hover */
+    content: "Login"; 
     position: absolute;
     top: 100%;
     left: 0;
@@ -91,7 +99,7 @@
 }
 
 .create-job-btn:hover::before {
-    top: 0; /* Moves text up */
+    top: 0;
 }
 
 .create-job-btn span {
@@ -115,5 +123,105 @@
 }
 .create-job-btn:hover .login-text {
     transform: translateY(0);
-    /* opacity: 1; */
+}
+
+@media (max-width: 1024px) {
+    .custom-navbar {
+        width: 90%;
+        height: 70px;
+        padding: 0 20px;
+    }
+
+    .navbar-logo {
+        height: 40px;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+
+    .create-job-btn {
+        width: 100px;
+        height: 35px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .custom-navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+    .navbar-toggler {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .navbar-toggler-icon {
+        width: 25px;
+        height: 3px;
+        background: #000;
+        display: block;
+        margin: 5px 0;
+    }
+
+    .navbar-collapse {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .navbar-nav .nav-item {
+        width: 100%;
+    }
+
+    .navbar-nav .nav-link {
+        display: block;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .create-job-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .custom-navbar {
+        width: 100%;
+        border-radius: 0;
+        padding: 5px 10px;
+    }
+
+    .navbar-logo {
+        height: 35px;
+    }
+
+    .navbar-nav {
+        gap: 3px;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .create-job-btn {
+        width: 90px;
+        height: 30px;
+        font-size: 10px;
+    }
 }

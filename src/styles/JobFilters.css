@@ -1,3 +1,18 @@
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../fonts/Satoshi-Variable.woff2') format('woff2'),
+       url('../fonts/Satoshi-Variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../fonts/Satoshi-Bold.ttf') format('truetype'),
+       url('../fonts/Satoshi-Bold.woff2') format('woff2');;
+  font-weight: 700 900; 
+  font-style: normal;
+}
+
 .job-filters {
   display: flex;
   justify-content: space-between;
@@ -10,6 +25,7 @@
   flex-wrap: wrap;
   gap: 15px;
   margin-top: -70px;
+  font-family: 'Satoshi', sans-serif;
 }
 
 .filter-item {
@@ -44,12 +60,7 @@
   width: 27px;
 }
 
-.salary-range {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 16px;
-}
+
 
 input[type="range"] {
   width: 140px;
@@ -76,3 +87,51 @@ input[type="range"]::-webkit-slider-thumb {
   height: 40px;
   background-color: #ddd;
 }
+
+.salary-range {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-width: 220px;
+  gap: 10px;
+}
+
+.salary-slider {
+  width: 80%;
+  height: 6px;
+  background: #e0e0e0;
+  border-radius: 5px;
+  position: relative;
+}
+
+.track {
+  background: black;
+  height: 6px;
+  border-radius: 5px;
+}
+
+.thumb {
+  width: 16px;
+  height: 16px;
+  background: black;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  top: -5px;
+}
+
+.salary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-weight: bold;
+}
+
+.salary-header span {
+  font-size: 16px;
+}
+
+

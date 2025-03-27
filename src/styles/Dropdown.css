@@ -1,4 +1,11 @@
-/* Dropdown Button */
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../fonts/Satoshi-Variable.woff2') format('woff2'),
+       url('../fonts/Satoshi-Variable.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 .dropbtn {
     background-color: #ffffff;
@@ -10,6 +17,7 @@
     border-radius: 6px;
     transition: background-color 0.3s;
     border: 1px solid #ddd;
+    font-family: 'Satoshi', sans-serif;
     font-size: 14px;
     background-image: url("../assets/dropdown.png");
     background-repeat: no-repeat;
@@ -18,14 +26,12 @@
     padding-right: 30px;
   }
   
-  /* Dropdown Container */
   .dropdown {
     position: relative;
     display: inline-block;
     width: 100%;
   }
   
-  /* Dropdown Content */
   .dropdown-content {
     display: none;
     position: absolute;
@@ -37,7 +43,6 @@
     overflow: hidden;
   }
   
-  /* Dropdown Links */
   .dropdown-content a {
     color: black;
     padding: 10px 16px;
@@ -46,7 +51,6 @@
     font-size: 14px;
   }
   
-  /* Hover Effects */
   .dropdown-content a:hover {
     background-color: #f1f1f1;
   }

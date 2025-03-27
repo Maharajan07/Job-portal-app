@@ -14,8 +14,6 @@ import metaLogo from "../assets/meta.png";
 import facebookLogo from "../assets/facebook.png";
 
 
-
-// 🔹 Map company names to logos
 const logoMap = {
   "Amazon": amazonLogo,
   "Tesla": teslaLogo,
@@ -33,8 +31,8 @@ const JobCard = ({ job }) => {
   return (
     <div className="card">
       <div className="d-flex align-items-center justify-content-between">
-      <img src={logoMap[job.company] || amazonLogo} alt={job.company} /> {/* Default to amazonLogo if not found */}
-      <span className="badge">24h Ago</span>
+        <img src={logoMap[job.company] || amazonLogo} alt={job.company} /> 
+      <span className="badge" style={{color:"black", fontSize:"14px",fontWeight:"500"}}>24h Ago</span>
       </div>
       <h5>{job.title}</h5>
 

@@ -36,7 +36,6 @@ const Navbar = ({ onOpenModal }) => {
           </ul>
         </div>
 
-        {/* ✅ Log button clicks for debugging */}
         <button className="btn create-job-btn" onClick={() => {
           console.log("Create Jobs button clicked!");
           if (onOpenModal) {
