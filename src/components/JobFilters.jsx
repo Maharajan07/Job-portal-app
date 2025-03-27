@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
+import { Slider } from "@mui/material";
 import searchIcon from "../assets/search.png";
 import typeIcon from "../assets/type.png";
 import locationIcon from "../assets/location.png";
-import ReactSlider from "react-slider";
-
 
 const JobFilters = ({ onFilterChange }) => {
   const [search, setSearch] = useState("");
@@ -13,11 +12,10 @@ const JobFilters = ({ onFilterChange }) => {
 
   useEffect(() => {
     onFilterChange({ search, location, jobType, salary });
-  }, [search, location, jobType, salary]); 
+  }, [search, location, jobType, salary]);
 
   return (
     <div className="job-filters">
-
       <div className="filter-item">
         <img src={searchIcon} alt="Search Icon" className="filter-icon" />
         <input
@@ -53,33 +51,30 @@ const JobFilters = ({ onFilterChange }) => {
           <option value="Freelance">Freelance</option>
           <option value="Internship">Internship</option>
           <option value="Contract">Contract</option>
-
         </select>
       </div>
 
       <div className="filter-separator"></div>
 
+      {/* ✅ Fixed MUI Slider */}
       <div className="salary-range">
         <div className="salary-headres">
-          <span>Salary Per Month </span>
+          <span>Salary Per Month</span>
           <span>₹{salary[0] / 1000}k - ₹{salary[1] / 1000}k</span>
         </div>
-        <ReactSlider
-          className="salary-slider"
-          thumbClassName="thumb"
-          trackClassName="track"
+        <Slider
+          value={salary}
+          onChange={(e, newValue) => setSalary(newValue)} // ✅ Corrected
           min={10000}
           max={450000}
           step={5000}
-          value={salary}
-          onChange={setSalary}
-          pearling
-          minDistance={5000} 
+          valueLabelDisplay="auto" // ✅ Add labels for better UI
+
+          sx={{
+            color: "black", // Change the slider color to black
+          }}
         />
-      <div className="salary-values">
-    
-  </div>
-</div>
+      </div>
     </div>
   );
 };
