@@ -80,11 +80,13 @@ Frontend:
 npm run dev
 ```
 ---
-🛠 Tech Stack
+##🛠 Tech Stack
 Frontend: React, Vite, Tailwind CSS
 
 Backend: Node.js, Express.js
 
 Database: MongoDB
+
 ---
 
+#### Made by Maharajan!
