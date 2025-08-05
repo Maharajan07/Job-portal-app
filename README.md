@@ -1,16 +1,90 @@
- HEAD
-# Job-portal
-=======
-# React + Vite
+# 💼 JobMatch – MERN Stack Job Portal App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern Job Portal Web Application built with the MERN stack, enabling users to browse job listings and apply, while admins can manage job postings efficiently.
 
-Currently, two official plugins are available:
+🔗 **Live Demo:** [Visit Site](https://cybermindsjob.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-27cf474 (Initial commit)
+### 👤 User Panel
+- Browse available job listings
+- Filter by company, location, and job role
+- View job details
+- Apply for jobs
+
+### 🔐 Admin Panel
+- Add, update, and delete job listings (CRUD operations)
+- Manage job data from a centralized dashboard
+
+---
+
+## 📁 Project Structure
+ ```bash
+Job-portal-app-main/
+├── backend/ # Express backend server
+│ ├── models/ # MongoDB schemas (Job model)
+│ ├── routes/ # API routes
+│ └── server.js # Main entry point
+├── src/ # React frontend
+│ ├── assets/ # Logos and images
+│ ├── App.jsx # Main app component
+│ └── main.jsx # Entry file
+├── .env # Environment variables
+├── package.json # Project metadata
+├── vite.config.js # Vite config for frontend
+└── README.md
+```
+
+---
+
+## 🚀 Run Locally
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/your-username/Job-portal-app-main.git
+cd Job-portal-app-main
+```
+###2️⃣ Install Dependencies
+```bash
+# Frontend
+npm install
+
+# Backend
+cd backend
+npm install
+```
+###3️⃣ Set Up Environment Variables
+Create a .env file in both root and backend/ directories.
+
+Root .env (for frontend)
+```bash
+
+VITE_API_URL=http://localhost:5000
+```
+Backend .env
+```bash
+MONGO_URL=your_mongodb_connection_string
+PORT=5000
+```
+###4️⃣ Start the Development Servers
+Backend:
+```bash
+cd backend
+npm start
+```
+Frontend:
+```bash
+npm run dev
+```
+---
+🛠 Tech Stack
+Frontend: React, Vite, Tailwind CSS
+
+Backend: Node.js, Express.js
+
+Database: MongoDB
+---
+
