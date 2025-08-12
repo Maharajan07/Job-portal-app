@@ -44,8 +44,8 @@ Job-portal-app-main/
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/Job-portal-app-main.git
-cd Job-portal-app-main
+git clone https://github.com/Maharajan07/Job-portal-app.git
+cd Job-portal-app
 ```
 ###2️⃣ Install Dependencies
 ```bash
