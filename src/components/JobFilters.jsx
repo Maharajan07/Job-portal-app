@@ -20,7 +20,7 @@ const JobFilters = ({ onFilterChange }) => {
         <img src={searchIcon} alt="Search Icon" className="filter-icon" />
         <input
           type="text"
-          placeholder="Search by Job Title"
+          placeholder="Search by Job Title, Role"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
@@ -31,7 +31,7 @@ const JobFilters = ({ onFilterChange }) => {
       <div className="filter-item">
         <img src={locationIcon} alt="Location Icon" className="filter-icon" />
         <select value={location} onChange={(e) => setLocation(e.target.value)}>
-          <option value="">Preferred Location</option>
+          <option value="">&nbsp;&nbsp;Preferred Location</option>
           <option value="Remote">Remote</option>
           <option value="Onsite">Onsite</option>
           <option value="Hybrid">Hybrid</option>
@@ -45,7 +45,7 @@ const JobFilters = ({ onFilterChange }) => {
       <div className="filter-item">
         <img src={typeIcon} alt="Type Icon" className="filter-icon" />
         <select value={jobType} onChange={(e) => setJobType(e.target.value)}>
-          <option value="">Job Type</option>
+          <option value="">&nbsp;&nbsp;Job type</option>
           <option value="FullTime">Full Time</option>
           <option value="PartTime">Part Time</option>
           <option value="Freelance">Freelance</option>
@@ -56,23 +56,37 @@ const JobFilters = ({ onFilterChange }) => {
 
       <div className="filter-separator"></div>
 
-      {/* ✅ Fixed MUI Slider */}
+      {/* Fixed MUI Slider */}
       <div className="salary-range">
         <div className="salary-headres">
-          <span>Salary Per Month</span>
+          <span>Salary Per Month&nbsp;&nbsp;&nbsp;&nbsp;</span>
           <span>₹{salary[0] / 1000}k - ₹{salary[1] / 1000}k</span>
         </div>
         <Slider
           value={salary}
-          onChange={(e, newValue) => setSalary(newValue)} // ✅ Corrected
+          onChange={(e, newValue) => setSalary(newValue)}
           min={10000}
           max={450000}
           step={5000}
-          valueLabelDisplay="auto" // ✅ Add labels for better UI
+          valueLabelDisplay="auto" //  Add labels for better UI
 
           sx={{
-            color: "black", // Change the slider color to black
-          }}
+      width: "80%",
+      color: "black",
+      height: 3, // overall thickness
+      "& .MuiSlider-rail": {
+        height: 3,
+        borderRadius: 5,
+      },
+      "& .MuiSlider-track": {
+        height: 3,
+        borderRadius: 5,
+      },
+      "& .MuiSlider-thumb": {
+        width: 15,
+        height: 15,
+      },
+    }}
         />
       </div>
     </div>

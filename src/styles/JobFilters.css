@@ -1,10 +1,10 @@
-@font-face {
+/* @font-face {
   font-family: 'Satoshi';
   src: url('../fonts/Satoshi-Variable.woff2') format('woff2'),
        url('../fonts/Satoshi-Variable.ttf') format('truetype');
   font-weight: 100 900;
   font-style: normal;
-}
+} */
 @font-face {
   font-family: 'Satoshi';
   src: url('../fonts/Satoshi-Bold.ttf') format('truetype'),
@@ -18,14 +18,19 @@
   justify-content: space-between;
   align-items: center;
   background: #fff;
-  padding: 20px 30px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  border-radius: 10px;
+  padding: 20px 5px;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 0px;
   margin-bottom: 20px;
   flex-wrap: wrap;
-  gap: 15px;
-  margin-top: -70px;
+  gap: 5px;
+  margin-top: -90px;
   font-family: 'Satoshi', sans-serif;
+  width: 100vw;
+  max-width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  left: 0;
 }
 
 .filter-item {
@@ -50,14 +55,15 @@
   outline: none;
   font-size: 16px;
   width: 100%;
-  color: #333;
+  color: #686868;
+  font-weight: 500;
 }
 
 .filter-icon {
   color: #666;
   font-size: 18px;
-  height: 25px;
-  width: 27px;
+  height: 22px;
+  width: 23px;
 }
 
 
@@ -84,7 +90,7 @@ input[type="range"]::-webkit-slider-thumb {
 
 .filter-separator {
   width: 1.5px;
-  height: 40px;
+  height: 50px;
   background-color: #ddd;
 }
 
@@ -96,6 +102,7 @@ input[type="range"]::-webkit-slider-thumb {
   flex: 1;
   min-width: 220px;
   gap: 10px;
+  font-weight: bold;
 }
 
 .salary-slider {

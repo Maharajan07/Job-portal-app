@@ -51,7 +51,7 @@ app.post("/jobs", async (req, res) => {
     const minSalary = req.body.minSalary ? Number(req.body.minSalary) : 0;
     const maxSalary = req.body.maxSalary ? Number(req.body.maxSalary) : 0;
 
-    console.log(`✅ Processed Salary: minSalary=${minSalary}, maxSalary=${maxSalary}`);
+    console.log(` Processed Salary: minSalary=${minSalary}, maxSalary=${maxSalary}`);
 
     if (isNaN(minSalary) || isNaN(maxSalary)) {
       return res.status(400).json({ message: "Invalid salary values" });
@@ -69,15 +69,15 @@ app.post("/jobs", async (req, res) => {
     });
 
     const savedJob = await newJob.save();
-    console.log("✅ Job Added to DB:", savedJob);
+    console.log(" Job Added to DB:", savedJob);
 
     res.status(201).json({ message: "Job added successfully", job: savedJob });
   } catch (error) {
-    console.error("❌ Error storing job:", error);
+    console.error(" Error storing job:", error);
     res.status(500).json({ message: "Failed to store job", error: error.message });
   }
 });
 
-// ✅ Start Server
+//  Start Server
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(` Server running on port ${PORT}`));

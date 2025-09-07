@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Job = require("../models/job");
 
-// ✅ GET all jobs
+//  GET all jobs
 router.get("/", async (req, res) => {
   try {
     const jobs = await Job.find();
@@ -12,12 +12,12 @@ router.get("/", async (req, res) => {
   }
 });
 
-// ✅ POST a new job
+//  POST a new job
 router.post("/", async (req, res) => {
   try {
     console.log("Received Job Data:", req.body);
 
-    // ✅ Check required fields
+    //  Check required fields
     if (!req.body.title || !req.body.company || !req.body.location || !req.body.type || !req.body.minSalary || !req.body.maxSalary || !req.body.deadline || !req.body.description) {
       return res.status(400).json({ message: "Missing required fields" });
     }
@@ -34,10 +34,10 @@ router.post("/", async (req, res) => {
     });
 
     await newJob.save();
-    console.log("✅ Job added to DB:", newJob);
+    console.log(" Job added to DB:", newJob);
     res.status(201).json({ message: "Job added successfully", job: newJob });
   } catch (error) {
-    console.error("❌ Error storing job:", error);
+    console.error(" Error storing job:", error);
     res.status(500).json({ message: "Failed to store job", error: error.message });
   }
 });

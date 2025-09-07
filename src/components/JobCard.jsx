@@ -31,8 +31,8 @@ const JobCard = ({ job }) => {
   return (
     <div className="card">
       <div className="d-flex align-items-center justify-content-between">
-        <img src={logoMap[job.company] || amazonLogo} alt={job.company} /> 
-      <span className="badge" style={{color:"black", fontSize:"14px",fontWeight:"500"}}>24h Ago</span>
+        <img src={logoMap[job.company] || amazonLogo} alt={job.company} className="logo-img" /> 
+      <span className="badge" style={{color:"black", fontSize:"15px",fontWeight:"500"}}>24h Ago</span>
       </div>
       <h5>{job.title}</h5>
 
@@ -47,7 +47,7 @@ const JobCard = ({ job }) => {
         </span>
         <span className="icon">
           <img src={lpaIcon} alt="Salary Icon" className="icon-img" />
-          {job.maxSalary ? (job.maxSalary / 100000).toFixed(0) + " LPA" : "Salary Not Disclosed"}
+          {job.maxSalary ? (job.maxSalary / 100000).toFixed(0) + "LPA" : "Salary Not Disclosed"}
         </span>
       </p>
 

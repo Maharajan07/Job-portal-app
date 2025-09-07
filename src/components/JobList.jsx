@@ -18,8 +18,8 @@ const JobList = ({ jobs }) => {
   }, [jobs]);
 
   useEffect(() => {
-    console.log("🚀 Filters Applied:", filters);
-    console.log("🌎 All Jobs Data:", jobs);
+    console.log(" Filters Applied:", filters);
+    console.log(" All Jobs Data:", jobs);
 
     let updatedJobs = Array.isArray(jobs) ? [...jobs] : [];
 
@@ -29,7 +29,7 @@ const JobList = ({ jobs }) => {
 
     if (filters.jobType) {
       updatedJobs = updatedJobs.filter((job) => {
-        console.log("🔍 Checking Job Type:", job?.type);
+        console.log(" Checking Job Type:", job?.type);
         return job?.type && job.type === filters.jobType;
       });
     }
@@ -50,7 +50,7 @@ const JobList = ({ jobs }) => {
       });
     }
 
-    console.log("✅ Filtered Jobs:", updatedJobs);
+    console.log(" Filtered Jobs:", updatedJobs);
     setFilteredJobs(updatedJobs);
   }, [filters, jobs]);
 

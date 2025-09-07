@@ -9,8 +9,8 @@
 .custom-navbar {
     font-family: 'Satoshi', sans-serif;
     font-weight: bold;
-    width: 890px;
-    height: 80px;
+    width: 950px;
+    height: 85px;
     background: #ffffff;
     position: relative; 
     top: 21px;
@@ -18,7 +18,7 @@
     transform: translateX(-50%);
     border-radius: 122px;
     border: 1px solid #fcfcfc;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -34,20 +34,21 @@
 
 .navbar-logo {
     height: 50px;
+    width: 48px;
 }
 
 .navbar-nav {
     display: flex;
     align-items: center;
     list-style: none;
-    gap: 10px;
+    gap: 40px;
     margin: 0;
     padding: 0;
 }
 
 .navbar-nav .nav-link {
-    color: #000;
-    font-weight: 500;
+    color: #303030;
+    font-weight: 700;
     font-size: 16px;
     text-decoration: none;
     padding: 8px 15px;
@@ -75,7 +76,7 @@
     position: relative;
     overflow: hidden;
     height: 40px;
-    width: 120px;
+    width: 125px;
     display: flex;
     align-items: center;
     justify-content: center;

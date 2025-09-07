@@ -33,7 +33,7 @@ const JobFormModal = ({ isOpen, onClose, onJobSubmit }) => {
         description: formData.description,
       };
 
-      console.log("🔍 Sending Job Data:", jobData); 
+      console.log("Sending Job Data:", jobData); 
 
       const response = await fetch(`${import.meta.env.VITE_API_URL}/jobs`, {
         method: "POST",
@@ -43,7 +43,7 @@ const JobFormModal = ({ isOpen, onClose, onJobSubmit }) => {
 
       if (response.ok) {
         const result = await response.json();
-        console.log("✅ Job added successfully:", result.job);
+        console.log("Job added successfully:", result.job);
 
         if (typeof onJobSubmit === "function") {
           onJobSubmit(result.job);
@@ -61,10 +61,10 @@ const JobFormModal = ({ isOpen, onClose, onJobSubmit }) => {
         });
         onClose(); 
       } else {
-        console.error("❌ Failed to submit job");
+        console.error("Failed to submit job");
       }
     } catch (error) {
-      console.error("❌ Error submitting job:", error);
+      console.error("Error submitting job:", error);
     }
   };
 
